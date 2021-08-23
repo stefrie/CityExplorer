@@ -20,22 +20,15 @@ to connect the React app with my GitHub folder
 ## Change Log
 08-23-2021 2:57pm - Added all addl files and deployed site
 
-## Credit and Collaborations
-Those who have helped along the way:
-
-- Robert Zimmerman
-- Hexx King
-
-## Time Estimates
+## Time Estimates and Collaborators
 
 | Time Estimate | Name of Feature | Start Time | Finish Time | Actual Time Needed | Collaborators |
 |:-------------:|:---------------:|------------|-------------|--------------------|---------------|
 | 1 hour        |  Lab 06 - Task 1 | 2:30pm    |  3:20 pm    | 1 hr, 20 mins      | Robert Zimmerman, Hexx King |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
+| 3 hours       |  Lab 06 - Task 2 | 4:20pm    |      |                    |               |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
