@@ -30,7 +30,7 @@ Those who have helped along the way:
 
 | Time Estimate | Name of Feature | Start Time | Finish Time | Actual Time Needed | Collaborators |
 |:-------------:|:---------------:|------------|-------------|--------------------|---------------|
-| 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    | Robert Zimmerman, Hexx King |
+| 1 hour        |  Lab 06 - Task 1 | 2:30pm    |  3:20 pm    | 1 hr, 20 mins      | Robert Zimmerman, Hexx King |
 | 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
 | 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
 | 4 hours       |  Feature Name   | 2:30pm     |  5:00 pm    |                    |               |
