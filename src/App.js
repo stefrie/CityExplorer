@@ -25,7 +25,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
-				<input onChange={(e) => this.setState({ searchQuery: e.target.value })} value={this.state.searchQuery} placeholder="Search for a city!"></input>
+				<input onChange={(e) => this.setState({ searchQuery: e.target.value })} value={this.state.searchQuery} placeholder="Search for a city"></input>
 				<button onClick={this.getLocation}>Explore!</button>
 				{this.state.location.place_id && 
 				<h2>The city is: {this.state.location.displayname}</h2>
