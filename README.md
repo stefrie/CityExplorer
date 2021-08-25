@@ -37,3 +37,6 @@ Created using:
 | 1 hour        | Lab 06 - Task 1 | 2:30pm     | 3:20 pm     | 1 hr, 20 mins      | Robert Zimmerman, Hexx King |
 | 3 hours       | Lab 06 - Task 2 | 4:20pm     | ?           | ?                  | Chance Harmon |
 | 2 hours       | Lab 06 - 3 & 4  | 1:00 pm    | 5:15 pm     | 4 hrs, 15 mins     | Haustin Kimbrough, JB Tellez |
+
+## Other Resources
+![./src/Adobe-CityExplorer.jpeg](./src/Adobe-CityExplorer.jpeg)

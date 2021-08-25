@@ -24,36 +24,53 @@ class App extends React.Component {
 		} catch (error) {
 			this.setState({ error })
 		}
-		// try {
-		// 	return <h1>Erorr! Errorr!</h1>
-		// } catch (error) {
-		// 	alert('danger will robinson')
-			// 
-		// }	
 	}
 
 	render() {
 		return (
 			<>
-				<input 
-					onChange={(e) => this.setState({ searchQuery: e.target.value })} 
-					value={this.state.searchQuery} 
-					style={{ 
-						fontFamily: 'Trebuchet MS, sans-serif', 
-						margin: '20px', 
-						backgroundColor: '#fff3de'
-					}}
-					placeholder="Search for a city">
-				</input>
-				<button 
-					style={{ 
-						fontFamily: 'Trebuchet MS, sans-serif', 
-						backgroundColor: '#fff3de', 
-						color: '#968565' 
-					}}
-					onClick={this.getLocation}>
-					Explore!
-				</button>
+				<h1 style={{
+					color: '#718196',
+					fontFamily: 'Brush Script MT, Brush Script Std, cursive',
+					fontWeight: 'bolder',
+					textAlign: 'center',
+					padding: '20px',
+					fontSize: '72px',
+					alignText: 'bottom'
+				}}>City Explorer</h1>
+				<hr style={{
+					border: '10px solid #718196',
+					borderRadius: '100%',
+					width: '90%',
+					margin: 'auto auto 30px auto',
+				}}></hr>
+				<container style={{display: 'flex', justifyContent: 'center' }}>
+					<input 
+						onChange={(e) => this.setState({ searchQuery: e.target.value })} 
+						value={this.state.searchQuery} 
+						style={{ 
+							fontFamily: 'Trebuchet MS, sans-serif', 
+							margin: '20px', 
+							backgroundColor: '#fff3de',
+							color: '#968565',
+							borderRadius: '5px',
+							textAlign: 'center'
+						}}
+						placeholder="Search for a city">
+					</input>
+					<button 
+						style={{ 
+							fontFamily: 'Trebuchet MS, sans-serif', 
+							backgroundColor: '#fff3de', 
+							color: '#968565',
+							margin: '20px',
+							padding: '0px 20px',
+							borderRadius: '15px'					
+						}}
+						onClick={this.getLocation}>
+						Explore!
+					</button>
+				</container>
 				{this.state.location.place_id && 
 					<>
 					<CityCard 
@@ -64,7 +81,7 @@ class App extends React.Component {
 					/>
 					</>
 				}
-				{this.state.error && <p>Something went wrong! See error message: "{this.state.error.message}"</p>}
+				{this.state.error && <p style={{textAlign: 'center', color: '#D61D00'}}>Something went wrong! Error message: "{this.state.error.message}"</p>}
 			</>
 		)
 	}
