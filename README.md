@@ -24,9 +24,9 @@ to connect the React app with my GitHub folder
 
 | Time Estimate | Name of Feature | Start Time | Finish Time | Actual Time Needed | Collaborators |
 |:-------------:|:---------------:|------------|-------------|--------------------|---------------|
-| 1 hour        |  Lab 06 - Task 1 | 2:30pm    |  3:20 pm    | 1 hr, 20 mins      | Robert Zimmerman, Hexx King |
-| 3 hours       |  Lab 06 - Task 2 | 4:20pm    |      |                    |               |
-|  |  |  |  |  |  |
+| 1 hour        | Lab 06 - Task 1 | 2:30pm     | 3:20 pm     | 1 hr, 20 mins      | Robert Zimmerman, Hexx King |
+| 3 hours       | Lab 06 - Task 2 | 4:20pm     |             |                    |               |
+| 2 hours       | Lab 06 - 3 & 4  | 1:00 pm    | 5:00 pm     | 4 hours            | Chance Harmon, Haustin Kimbrough |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
