@@ -11,6 +11,8 @@ class App extends React.Component {
 			searchQuery: '',
 			location: {},
 			error: null,
+			forecastArray: [],
+			// movies: [];
 		};
 	}
 
@@ -21,12 +23,49 @@ class App extends React.Component {
 		const response = await axios.get(API);
 		console.log(response.data[0]);
 		this.setState({location: response.data[0]});
+
+		this.getWeather();
+
 		} catch (error) {
 			this.setState({ error })
 		}
 	}
 
+	getWeather = async () => {
+		const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
+		
+		try {
+		const weatherResponse = await axios.get(cityWeather);
+		this.setState({forecastArray: weatherResponse.data});
+		} catch (error) {
+			this.setState({ error })
+		}
+	}
+
+	// getWeather = async () => {
+	// 	const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
+		
+	// 	try {
+	// 	const weatherResponse = await axios.get(cityWeather);
+	// 	this.setState({forecastArray: weatherResponse.data});
+	// 	} catch (error) {
+	// 		this.setState({ error })
+	// 	}
+	// }
+
+	// getWeather = async () => {
+	// 	const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
+		
+	// 	try {
+	// 	const weatherResponse = await axios.get(cityWeather);
+	// 	this.setState({forecastArray: weatherResponse.data});
+	// 	} catch (error) {
+	// 		this.setState({ error })
+	// 	}
+	// }
+
 	render() {
+		console.log(this.state);
 		return (
 			<>
 				<h1 style={{
@@ -78,7 +117,10 @@ class App extends React.Component {
 						lat={this.state.location.lat}
 						lon={this.state.location.lon}
 						mapImage={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}
+						getWeather={this.state.forecastArray}
+						searchQuery={this.state.searchQuery}
 					/>
+					{/* <Weather getWeather={this.state.forecastArray} searchQuery={this..searchQuery} /> */}
 					</>
 				}
 				{this.state.error && <p style={{textAlign: 'center', color: '#D61D00'}}>Something went wrong! Error message: "{this.state.error.message}"</p>}
