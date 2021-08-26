@@ -21,6 +21,7 @@ class App extends React.Component {
 		
 		try {
 		const response = await axios.get(API);
+		// await => makes sure axios runs before you set state
 		console.log(response.data[0]);
 		this.setState({location: response.data[0]});
 
