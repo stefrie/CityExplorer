@@ -4,6 +4,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CityCard from './CityCard';
 
+const server = process.env.REACT_APP_BACKEND_URL;
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -33,7 +35,7 @@ class App extends React.Component {
 	}
 
 	getWeather = async () => {
-		const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
+		const cityWeather = `${server}/weather?searchQuery=${this.state.searchQuery}`;
 		
 		try {
 		const weatherResponse = await axios.get(cityWeather);
