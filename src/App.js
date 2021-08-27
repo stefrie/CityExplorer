@@ -4,7 +4,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CityCard from './CityCard';
 
-const server = process.env.REACT_APP_BACKEND_URL;
+
+const server = `http://localhost:3003`;
 
 class App extends React.Component {
 	constructor(props) {
@@ -14,7 +15,7 @@ class App extends React.Component {
 			location: {},
 			error: null,
 			forecastArray: [],
-			// movies: [];
+			moviesArray: [],
 		};
 	}
 
@@ -26,9 +27,8 @@ class App extends React.Component {
 		// await => makes sure axios runs before you set state
 		console.log(response.data[0]);
 		this.setState({location: response.data[0]});
-
 		this.getWeather();
-
+		this.getMovies();
 		} catch (error) {
 			this.setState({ error })
 		}
@@ -45,30 +45,17 @@ class App extends React.Component {
 		}
 	}
 
-	// getWeather = async () => {
-	// 	const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
-		
-	// 	try {
-	// 	const weatherResponse = await axios.get(cityWeather);
-	// 	this.setState({forecastArray: weatherResponse.data});
-	// 	} catch (error) {
-	// 		this.setState({ error })
-	// 	}
-	// }
-
-	// getWeather = async () => {
-	// 	const cityWeather = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`;
-		
-	// 	try {
-	// 	const weatherResponse = await axios.get(cityWeather);
-	// 	this.setState({forecastArray: weatherResponse.data});
-	// 	} catch (error) {
-	// 		this.setState({ error })
-	// 	}
-	// }
+	getMovies = async () => {
+		const cityFilms = `${server}/movies?searchQuery=${this.state.searchQuery}`;
+		try {
+		const moviesResponse = await axios.get(cityFilms);
+		this.setState({moviesArray: moviesResponse.data});
+		} catch (error) {
+			this.setState({ error })
+		}
+	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<>
 				<h1 style={{
@@ -122,8 +109,8 @@ class App extends React.Component {
 						mapImage={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}
 						getWeather={this.state.forecastArray}
 						searchQuery={this.state.searchQuery}
+						getMovies={this.state.moviesArray}
 					/>
-					{/* <Weather getWeather={this.state.forecastArray} searchQuery={this..searchQuery} /> */}
 					</>
 				}
 				{this.state.error && <p style={{textAlign: 'center', color: '#D61D00'}}>Something went wrong! Error message: "{this.state.error.message}"</p>}
