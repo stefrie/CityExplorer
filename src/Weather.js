@@ -6,11 +6,9 @@ class Weather extends React.Component {
 		return (
 			<div>
 				{this.props.getWeather.map((value, idx) => (
-					<Card key={idx}>
+					<Card key={idx} style={{color: '#718196'}}>
 					<Card.Text>
-						Weather forecast: {value.date} 
-						{/* has a low of ${day.app_map_temp.low_temp}C and a high of ${day.high_temp}C with  */}
-						{value.desc}
+						Weather forecast for {value.date}: High of {value.high}C, low of {value.low}C with {value.desc}
 					</Card.Text>
 					</Card>
 				))}
