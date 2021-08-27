@@ -3,9 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CityCard from './CityCard';
+import functions from './fetcher';
 
-
-const server = `http://localhost:3003`;
+// (delete?) const server = `http://localhost:3003`;
 
 class App extends React.Component {
 	constructor(props) {
@@ -27,29 +27,9 @@ class App extends React.Component {
 		// await => makes sure axios runs before you set state
 		console.log(response.data[0]);
 		this.setState({location: response.data[0]});
-		this.getWeather();
-		this.getMovies();
-		} catch (error) {
-			this.setState({ error })
-		}
-	}
-
-	getWeather = async () => {
-		const cityWeather = `${server}/weather?searchQuery=${this.state.searchQuery}`;
-		
-		try {
-		const weatherResponse = await axios.get(cityWeather);
-		this.setState({forecastArray: weatherResponse.data});
-		} catch (error) {
-			this.setState({ error })
-		}
-	}
-
-	getMovies = async () => {
-		const cityFilms = `${server}/movies?searchQuery=${this.state.searchQuery}`;
-		try {
-		const moviesResponse = await axios.get(cityFilms);
-		this.setState({moviesArray: moviesResponse.data});
+		this.getWeather(this.state.searchQuery);
+		this.getMovies(this.state.searchQuery);
+		this.setState({error: null})
 		} catch (error) {
 			this.setState({ error })
 		}
