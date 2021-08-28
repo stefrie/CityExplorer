@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CityCard from './CityCard';
 
 // const server = `http://localhost:3003`;
-const server = process.env.REACT_APP_BACKEND_URL;
+// const server = process.env.REACT_APP_BACKEND_URL;
+const server = `https://city-explorer-stefanie.herokuapp.com`;
 
 class App extends React.Component {
 	constructor(props) {
