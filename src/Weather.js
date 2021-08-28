@@ -17,4 +17,10 @@ class Weather extends React.Component {
 	};
 }
 
+/// for (let propert in ) {
+// 		console.log(property, person[property])
+// }
+
+
+
 export default Weather;
