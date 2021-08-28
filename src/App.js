@@ -3,9 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CityCard from './CityCard';
-import functions from './fetcher';
 
-// (delete?) const server = `http://localhost:3003`;
+// const server = `http://localhost:3003`;
+const server = process.env.REACT_APP_BACKEND_URL;
 
 class App extends React.Component {
 	constructor(props) {
@@ -30,6 +30,29 @@ class App extends React.Component {
 		this.getWeather(this.state.searchQuery);
 		this.getMovies(this.state.searchQuery);
 		this.setState({error: null})
+		} catch (error) {
+			this.setState({ error })
+		}
+	}
+
+	getWeather = async (searchQuery) => {
+		const cityWeather = `${server}/weather?searchQuery=${searchQuery}`;
+		
+		try {
+		const weatherResponse = await axios.get(cityWeather);
+		this.setState({forecastArray: weatherResponse.data});
+		// return weatherResponse.data;
+		} catch (error) {
+			this.setState({ error })
+		}
+	}
+	
+	getMovies = async (searchQuery) => {
+		const cityFilms = `${server}/movies?searchQuery=${searchQuery}`;
+		try {
+		const moviesResponse = await axios.get(cityFilms);
+		this.setState({moviesArray: moviesResponse.data});
+		// return moviesResponse.data;
 		} catch (error) {
 			this.setState({ error })
 		}
